@@ -33,29 +33,35 @@ A high-performance REST API built with **Python** and **FastAPI** that resizes i
    cd Rest-API
 
 2. Create and activate a virtual environment
+   ```bash
     python3 -m venv venv
     source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-3. Install dependancies
+4. Install dependancies
+      ```bash
     python3 -m venv venv
     source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-4. Run the server
+6. Run the server
+7. ```bash
     uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 ### Option 2: Run with Docker/Podman
 
 1. Build the image
+   ```bash
    docker build -t image-resizer-app .
    # Or if using Podman:
    podman build -t image-resizer-app .
 
-2. Run the container
+3. Run the container
+     ```bash
     docker run -p 8000:8000 image-resizer-app
     #  Or if using Podman:
     podman run -p 8000:8000 image-resizer-app
 
 ### Running Tests
+    ```bash
    pytest -v
 
 This suite includes a test that uploads a mock image and verifies the response status and content type.
@@ -70,7 +76,7 @@ file (multipart/form-data): The image file to upload (.jpg, .png, .gif, .webp).
 width (int, optional): Target width (default: 800).
 height (int, optional): Target height (default: 600).
 Example curl Request:
-
+ ```bash
 bash
 
 Copy
